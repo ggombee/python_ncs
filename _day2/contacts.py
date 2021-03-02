@@ -8,6 +8,7 @@ class Contacts:
                f'전화번호: {self.phone} \n' \
                f'이메일: {self.email} \n' \
                f'주소: {self.address}\n'
+
 class ContactsService:
     def set_contact(self):
         obj = Contacts()
@@ -16,17 +17,21 @@ class ContactsService:
         obj.email = input("이메일: ")
         obj.address = input("주소: ")
         return obj
+
     def get_contacts(self, ls):
         for i in ls:
             print(i)
+
     def del_contact(self, ls, name):
         for i, j in enumerate(ls):  # i = index, j = element 리스트내부의 주소
             if j.name == name:
                 del ls[i]
+
     def print_menu(self):
         print("1. 연락처 입력 \n 2. 연락처 출력 \n 3. 연락처 삭제 \n 4. 종료")
         menu = input("메뉴선택 : ")
         return int(menu)
+
     @staticmethod
     def main():
         ls = []
@@ -43,5 +48,6 @@ class ContactsService:
                 service.del_contact(ls, name)
             elif menu == 4:
                 break
+
 if __name__ == '__main__':
     ContactsService.main()
