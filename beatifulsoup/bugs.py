@@ -1,9 +1,13 @@
 from bs4 import BeautifulSoup
 from urllib.request import urlopen
+
 class Bugs:
+
     date = ''
+
     def __init__(self, date):
         self.date = date
+
     def crawl(self):
         url = urlopen(self.date)
         soup = BeautifulSoup(url, 'lxml')
@@ -18,9 +22,11 @@ class Bugs:
             ctn_title += 1
             print(str(ctn_title)+"위")
             print("노래제목" + link2.text)
+
     @staticmethod
     def main():
         bugs = Bugs('https://music.bugs.co.kr/chart/track/realtime/total?chartdate=20181124&charthour=10')
         bugs.crawl()
+
 if __name__ == '__main__':
     Bugs.main()
