@@ -2,8 +2,10 @@ from bs4 import BeautifulSoup
 import requests
 
 class Wikipedia:
+
     def __init__(self):
         pass
+
     def scrap(self):
         base_url = 'http://dh.aks.ac.kr/Encyves/wiki/index.php/%EC%A1%B0%EC%84%A0_%EC%84%B8%EC%A2%85'
         con = requests.get(base_url)
